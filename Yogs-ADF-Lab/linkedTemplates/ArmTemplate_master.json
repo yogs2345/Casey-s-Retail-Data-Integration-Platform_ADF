@@ -1,0 +1,118 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Yogs-ADF-Lab"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adbpracticelab.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "283ceef7-cdc1-40d9-9b27-638e57028361"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "99f368c9-e9d7-4ee3-9f0f-b25761217abf"
+		},
+		"LS_Databricks_PCT_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0817-155321-lx51lior"
+		},
+		"LS_KeyVault_PCT_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-adb-lab.vault.azure.net/"
+		},
+		"LS_SQLDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-pct-prod.database.windows.net"
+		},
+		"LS_SQLDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"LS_SQLDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yogeshwari"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Yogs-ADF-Lab_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_Databricks_PCT_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('LS_Databricks_PCT_properties_typeProperties_existingClusterId')]"
+					},
+					"LS_KeyVault_PCT_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_KeyVault_PCT_properties_typeProperties_baseUrl')]"
+					},
+					"LS_ADLS_PCT_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_PCT_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_PCT_properties_typeProperties_tenant": {
+						"value": "[parameters('LS_ADLS_PCT_properties_typeProperties_tenant')]"
+					},
+					"LS_ADLS_PCT_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('LS_ADLS_PCT_properties_typeProperties_servicePrincipalId')]"
+					},
+					"LS_SQLDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLDB_properties_typeProperties_server')]"
+					},
+					"LS_SQLDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLDB_properties_typeProperties_database')]"
+					},
+					"LS_SQLDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLDB_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "Yogs-ADF-Lab_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Yogs-ADF-Lab_ArmTemplate_0')]"
+			]
+		}
+	]
+}

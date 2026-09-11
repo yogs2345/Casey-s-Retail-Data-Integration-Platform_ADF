@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Yogs-ADF-Lab"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_url": {
+			"value": "https://adbpracticelab.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_tenant": {
+			"value": "283ceef7-cdc1-40d9-9b27-638e57028361"
+		},
+		"LS_ADLS_PCT_properties_typeProperties_servicePrincipalId": {
+			"value": "99f368c9-e9d7-4ee3-9f0f-b25761217abf"
+		},
+		"LS_Databricks_PCT_properties_typeProperties_existingClusterId": {
+			"value": "0817-155321-lx51lior"
+		},
+		"LS_KeyVault_PCT_properties_typeProperties_baseUrl": {
+			"value": "https://kv-adb-lab.vault.azure.net/"
+		},
+		"LS_SQLDB_properties_typeProperties_server": {
+			"value": "sql-pct-prod.database.windows.net"
+		},
+		"LS_SQLDB_properties_typeProperties_database": {
+			"value": "sqladmin"
+		},
+		"LS_SQLDB_properties_typeProperties_userName": {
+			"value": "Yogeshwari"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
