@@ -1,0 +1,34 @@
+{
+	"name": "DS_SQL_EmployeeMaster",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "EmpID",
+				"type": "varchar"
+			},
+			{
+				"name": "StoreID",
+				"type": "varchar"
+			},
+			{
+				"name": "EmployeeName",
+				"type": "varchar"
+			},
+			{
+				"name": "Designation",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EmployeeMaster"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

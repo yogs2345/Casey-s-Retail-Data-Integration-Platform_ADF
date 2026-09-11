@@ -1,0 +1,11 @@
+{
+	"name": "LS_KeyVault_PCT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-adb-lab.vault.azure.net/"
+		}
+	}
+}

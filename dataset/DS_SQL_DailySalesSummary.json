@@ -1,0 +1,47 @@
+{
+	"name": "DS_SQL_DailySalesSummary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SummaryDate",
+				"type": "date"
+			},
+			{
+				"name": "StoreID",
+				"type": "varchar"
+			},
+			{
+				"name": "StoreName",
+				"type": "varchar"
+			},
+			{
+				"name": "TotalRevenue",
+				"type": "decimal",
+				"precision": 14,
+				"scale": 2
+			},
+			{
+				"name": "TotalTransactions",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AvgTransactionValue",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DailySalesSummary"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

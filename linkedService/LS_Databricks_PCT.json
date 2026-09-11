@@ -1,0 +1,14 @@
+{
+	"name": "LS_Databricks_PCT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-7405614777406292.12.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/514fad77-9878-49e5-9182-d8343c54aacc/resourceGroups/rg-adb-lab/providers/Microsoft.Databricks/workspaces/adb-lab-ws",
+			"existingClusterId": "0817-155321-lx51lior"
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"name": "DS_SQL_SupplierMaster",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SupplierID",
+				"type": "varchar"
+			},
+			{
+				"name": "SupplierName",
+				"type": "varchar"
+			},
+			{
+				"name": "Category",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SupplierMaster"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

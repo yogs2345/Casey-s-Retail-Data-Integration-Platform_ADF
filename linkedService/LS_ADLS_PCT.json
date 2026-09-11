@@ -1,0 +1,22 @@
+{
+	"name": "LS_ADLS_PCT",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adbpracticelab.dfs.core.windows.net/",
+			"tenant": "283ceef7-cdc1-40d9-9b27-638e57028361",
+			"servicePrincipalId": "99f368c9-e9d7-4ee3-9f0f-b25761217abf",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KeyVault_PCT",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sp-client-secret"
+			}
+		}
+	}
+}

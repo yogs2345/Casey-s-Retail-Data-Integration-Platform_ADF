@@ -1,0 +1,27 @@
+{
+	"name": "DS_ADLS_Metadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_PCT",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().FolderName",
+					"type": "Expression"
+				},
+				"fileSystem": "caseys-retail-data-platform"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
