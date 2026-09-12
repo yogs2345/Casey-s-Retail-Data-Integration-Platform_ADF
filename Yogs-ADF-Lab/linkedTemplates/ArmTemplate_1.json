@@ -737,13 +737,6 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {}
-					},
-					{
-						"pipelineReference": {
-							"referenceName": "PL_00_Master",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
 					}
 				],
 				"type": "BlobEventsTrigger",
@@ -757,9 +750,7 @@
 					]
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL_00_Master')]"
-			]
+			"dependsOn": []
 		}
 	]
 }
