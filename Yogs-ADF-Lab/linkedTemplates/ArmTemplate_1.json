@@ -6,6 +6,10 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "Yogs-ADF-Lab"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/514fad77-9878-49e5-9182-d8343c54aacc/resourceGroups/rg-adb-lab/providers/Microsoft.Storage/storageAccounts/adbpracticelab"
 		}
 	},
 	"variables": {
@@ -717,6 +721,44 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PL_02_MasterDataLoad')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_03_SalesValidation')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_01_FileIngestion",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PL_00_Master",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/caseys-retail-data-platform/blobs/caseys-retail-data-platform/landing/",
+					"blobPathEndsWith": ".csv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_00_Master')]"
 			]
 		}
 	]

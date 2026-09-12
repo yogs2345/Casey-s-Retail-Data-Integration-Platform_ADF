@@ -39,6 +39,10 @@
 			"type": "string",
 			"defaultValue": "Yogeshwari"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/514fad77-9878-49e5-9182-d8343c54aacc/resourceGroups/rg-adb-lab/providers/Microsoft.Storage/storageAccounts/adbpracticelab"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -107,6 +111,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					}
 				}
 			},

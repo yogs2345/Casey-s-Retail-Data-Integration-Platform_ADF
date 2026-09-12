@@ -28,6 +28,9 @@
 		},
 		"LS_SQLDB_properties_typeProperties_userName": {
 			"value": "Yogeshwari"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/514fad77-9878-49e5-9182-d8343c54aacc/resourceGroups/rg-adb-lab/providers/Microsoft.Storage/storageAccounts/adbpracticelab"
 		}
 	}
 }
