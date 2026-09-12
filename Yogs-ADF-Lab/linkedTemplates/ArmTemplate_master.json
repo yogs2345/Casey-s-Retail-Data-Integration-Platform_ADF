@@ -39,6 +39,10 @@
 			"type": "string",
 			"defaultValue": "Yogeshwari"
 		},
+		"LS_REST_JSONPlaceholder_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://jsonplaceholder.typicode.com"
+		},
 		"trigger1_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/514fad77-9878-49e5-9182-d8343c54aacc/resourceGroups/rg-adb-lab/providers/Microsoft.Storage/storageAccounts/adbpracticelab"
@@ -75,6 +79,9 @@
 					},
 					"LS_KeyVault_PCT_properties_typeProperties_baseUrl": {
 						"value": "[parameters('LS_KeyVault_PCT_properties_typeProperties_baseUrl')]"
+					},
+					"LS_REST_JSONPlaceholder_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_JSONPlaceholder_properties_typeProperties_url')]"
 					},
 					"LS_ADLS_PCT_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_PCT_properties_typeProperties_url')]"
