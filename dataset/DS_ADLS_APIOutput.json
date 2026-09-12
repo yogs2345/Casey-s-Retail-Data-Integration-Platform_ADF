@@ -1,0 +1,20 @@
+{
+	"name": "DS_ADLS_APIOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_PCT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "users.json",
+				"folderPath": "api-data",
+				"fileSystem": "api"
+			}
+		},
+		"schema": {}
+	}
+}
