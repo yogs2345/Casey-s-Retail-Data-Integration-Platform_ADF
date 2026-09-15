@@ -1,6 +1,5 @@
 {
 	"name": "LS_ADLS_PCT",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobFS",
@@ -18,5 +17,6 @@
 				"secretName": "sp-client-secret"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
